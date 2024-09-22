@@ -1,0 +1,18 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-with-cmenv
+spec:
+  containers:
+    - name: container-with-env
+      image: aamirpinger/node-app-image
+      envFrom:
+        - configMapRef:
+            name: cm-env
+      resources:
+        limits:
+          memory: "256Mi"  # Set your desired memory limit
+          cpu: "200m"      # Set your desired CPU limit
+        requests:
+          memory: "128Mi"  # Set your desired memory request
+          cpu: "100m" 

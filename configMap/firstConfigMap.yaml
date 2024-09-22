@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: first-configmap
+data:
+  fname: Muhammad
+  lname: Hannan

@@ -1,0 +1,20 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: firstpod
+  labels:
+    key1: value1
+    key2: value2
+spec:
+  containers:
+    - name: container1
+      image: aamirpinger/helloworld
+      ports:
+      - containerPort: 80
+      resources:
+        limits:
+          memory: "256Mi"  # Set your desired memory limit
+          cpu: "200m"      # Set your desired CPU limit
+        requests:
+          memory: "128Mi"  # Set your desired memory request
+          cpu: "100m" 

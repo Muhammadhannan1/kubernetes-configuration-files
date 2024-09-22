@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: firstcronjob
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          name: cronjob1pod
+          labels:
+            cronjob: job1
+        spec:
+          containers:
+          - name: cronjob1container
+            image: docker/whalesay
+            command: ["cowsay","This is a kubernetes job"]
+          restartPolicy: OnFailure

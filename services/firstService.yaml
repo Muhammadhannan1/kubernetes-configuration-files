@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  service-replicatesting
+spec:
+  selector:
+    type: replicaTesting
+  type:  LoadBalancer
+  ports:
+  - port:  8080
+    targetPort:  80
